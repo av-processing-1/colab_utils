@@ -3,9 +3,9 @@ import subprocess
 import youtube_dl
 
 def youtubeDownload(url, filename,formats="best"):
-    youtube_downloader_params = {"quiet": False, "outtmpl": output_video_file_path, "format": formats}
+    youtube_downloader_params = {"quiet": False, "outtmpl": filename, "format": formats}
     with youtube_dl.YoutubeDL(params=youtube_downloader_params) as ydl:
-        ydl.download([video_url])
+        ydl.download([url])
 
 def video2frames(filename, outPath):
     output_filename = os.path.join(outPath, '%06d.jpg')
